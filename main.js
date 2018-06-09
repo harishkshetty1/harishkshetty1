@@ -111,6 +111,7 @@ module.exports = ".Bootcamp {\n  margin-top: 60px; }\n\n@media only screen and (
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,16 +122,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AppComponent = /** @class */ (function () {
-    function AppComponent(render) {
+    function AppComponent(render, router) {
         this.render = render;
+        this.router = router;
         this.title = 'app';
-        this.scroller();
+        // this.scroller();
     }
-    AppComponent.prototype.scroller = function () {
-        this.render.listen('window', 'scroll', function (event) {
-            //  console.log( window.pageYOffset);
-            // console.log(event.target.window.pageYoffset);
+    // scroller() {
+    //   this.render.listen('window', 'scroll', event => {
+    //     //  console.log( window.pageYOffset);
+    //     // console.log(event.target.window.pageYoffset);
+    //   });
+    // }
+    AppComponent.prototype.ngOnInit = function () {
+        this.router.events.subscribe(function (evt) {
+            if (!(evt instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"])) {
+                return;
+            }
+            window.scrollTo(0, 0);
         });
     };
     AppComponent = __decorate([
@@ -139,7 +150,7 @@ var AppComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.scss */ "./src/app/app.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"]])
+        __metadata("design:paramtypes", [_angular_core__WEBPACK_IMPORTED_MODULE_0__["Renderer2"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -161,38 +172,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
-/* harmony import */ var _common_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./common/footer/footer.component */ "./src/app/common/footer/footer.component.ts");
-/* harmony import */ var _common_header_header_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/header/header.component */ "./src/app/common/header/header.component.ts");
-/* harmony import */ var _courses_courses_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./courses/courses.component */ "./src/app/courses/courses.component.ts");
-/* harmony import */ var _course_desc_course_desc_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./course-desc/course-desc.component */ "./src/app/course-desc/course-desc.component.ts");
-/* harmony import */ var _user_exp_user_exp_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user-exp/user-exp.component */ "./src/app/user-exp/user-exp.component.ts");
-/* harmony import */ var _learn_learn_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./learn/learn.component */ "./src/app/learn/learn.component.ts");
-/* harmony import */ var _you_get_you_get_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./you-get/you-get.component */ "./src/app/you-get/you-get.component.ts");
-/* harmony import */ var _faq_faq_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./faq/faq.component */ "./src/app/faq/faq.component.ts");
-/* harmony import */ var _cards_cards_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./cards/cards.component */ "./src/app/cards/cards.component.ts");
-/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-bootstrap */ "./node_modules/ngx-bootstrap/index.js");
-/* harmony import */ var _header_dropdown_header_dropdown_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./header-dropdown/header-dropdown.component */ "./src/app/header-dropdown/header-dropdown.component.ts");
-/* harmony import */ var _curriculam_curriculam_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./curriculam/curriculam.component */ "./src/app/curriculam/curriculam.component.ts");
-/* harmony import */ var _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./card-group/card-group.component */ "./src/app/card-group/card-group.component.ts");
-/* harmony import */ var _landing_cards_landing_cards_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./landing-cards/landing-cards.component */ "./src/app/landing-cards/landing-cards.component.ts");
-/* harmony import */ var _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./thankyou/thankyou.component */ "./src/app/thankyou/thankyou.component.ts");
-/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
-/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
-/* harmony import */ var _demopage_demopage_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./demopage/demopage.component */ "./src/app/demopage/demopage.component.ts");
-/* harmony import */ var _intermediate_intermediate_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./intermediate/intermediate.component */ "./src/app/intermediate/intermediate.component.ts");
-/* harmony import */ var _expert_expert_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./expert/expert.component */ "./src/app/expert/expert.component.ts");
-/* harmony import */ var ngx_scroll_event__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ngx-scroll-event */ "./node_modules/ngx-scroll-event/index.js");
-/* harmony import */ var ngx_scroll_event__WEBPACK_IMPORTED_MODULE_26___default = /*#__PURE__*/__webpack_require__.n(ngx_scroll_event__WEBPACK_IMPORTED_MODULE_26__);
-/* harmony import */ var ngx_scrollspy__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ngx-scrollspy */ "./node_modules/ngx-scrollspy/ngx-scrollspy.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
+/* harmony import */ var _common_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./common/footer/footer.component */ "./src/app/common/footer/footer.component.ts");
+/* harmony import */ var _common_header_header_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./common/header/header.component */ "./src/app/common/header/header.component.ts");
+/* harmony import */ var _courses_courses_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./courses/courses.component */ "./src/app/courses/courses.component.ts");
+/* harmony import */ var _course_desc_course_desc_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./course-desc/course-desc.component */ "./src/app/course-desc/course-desc.component.ts");
+/* harmony import */ var _user_exp_user_exp_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./user-exp/user-exp.component */ "./src/app/user-exp/user-exp.component.ts");
+/* harmony import */ var _learn_learn_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./learn/learn.component */ "./src/app/learn/learn.component.ts");
+/* harmony import */ var _you_get_you_get_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./you-get/you-get.component */ "./src/app/you-get/you-get.component.ts");
+/* harmony import */ var _faq_faq_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./faq/faq.component */ "./src/app/faq/faq.component.ts");
+/* harmony import */ var _cards_cards_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./cards/cards.component */ "./src/app/cards/cards.component.ts");
+/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ngx-bootstrap */ "./node_modules/ngx-bootstrap/index.js");
+/* harmony import */ var _header_dropdown_header_dropdown_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./header-dropdown/header-dropdown.component */ "./src/app/header-dropdown/header-dropdown.component.ts");
+/* harmony import */ var _curriculam_curriculam_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./curriculam/curriculam.component */ "./src/app/curriculam/curriculam.component.ts");
+/* harmony import */ var _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./card-group/card-group.component */ "./src/app/card-group/card-group.component.ts");
+/* harmony import */ var _landing_cards_landing_cards_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./landing-cards/landing-cards.component */ "./src/app/landing-cards/landing-cards.component.ts");
+/* harmony import */ var _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./thankyou/thankyou.component */ "./src/app/thankyou/thankyou.component.ts");
+/* harmony import */ var _register_register_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./register/register.component */ "./src/app/register/register.component.ts");
+/* harmony import */ var _contact_contact_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./contact/contact.component */ "./src/app/contact/contact.component.ts");
+/* harmony import */ var _demopage_demopage_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./demopage/demopage.component */ "./src/app/demopage/demopage.component.ts");
+/* harmony import */ var _intermediate_intermediate_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./intermediate/intermediate.component */ "./src/app/intermediate/intermediate.component.ts");
+/* harmony import */ var _expert_expert_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./expert/expert.component */ "./src/app/expert/expert.component.ts");
+/* harmony import */ var ngx_scroll_event__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ngx-scroll-event */ "./node_modules/ngx-scroll-event/index.js");
+/* harmony import */ var ngx_scroll_event__WEBPACK_IMPORTED_MODULE_27___default = /*#__PURE__*/__webpack_require__.n(ngx_scroll_event__WEBPACK_IMPORTED_MODULE_27__);
+/* harmony import */ var ngx_scrollspy__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ngx-scrollspy */ "./node_modules/ngx-scrollspy/ngx-scrollspy.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -227,38 +240,39 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-                _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"],
-                _common_footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"],
-                _common_header_header_component__WEBPACK_IMPORTED_MODULE_7__["HeaderComponent"],
-                _courses_courses_component__WEBPACK_IMPORTED_MODULE_8__["CoursesComponent"],
-                _course_desc_course_desc_component__WEBPACK_IMPORTED_MODULE_9__["CourseDescComponent"],
-                _user_exp_user_exp_component__WEBPACK_IMPORTED_MODULE_10__["UserExpComponent"],
-                _learn_learn_component__WEBPACK_IMPORTED_MODULE_11__["LearnComponent"],
-                _you_get_you_get_component__WEBPACK_IMPORTED_MODULE_12__["YouGetComponent"],
-                _faq_faq_component__WEBPACK_IMPORTED_MODULE_13__["FaqComponent"],
-                _cards_cards_component__WEBPACK_IMPORTED_MODULE_14__["CardsComponent"],
-                _header_dropdown_header_dropdown_component__WEBPACK_IMPORTED_MODULE_16__["HeaderDropdownComponent"],
-                _curriculam_curriculam_component__WEBPACK_IMPORTED_MODULE_17__["CurriculamComponent"],
-                _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_18__["CardGroupComponent"],
-                _landing_cards_landing_cards_component__WEBPACK_IMPORTED_MODULE_19__["LandingCardsComponent"],
-                _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_20__["ThankyouComponent"],
-                _register_register_component__WEBPACK_IMPORTED_MODULE_21__["RegisterComponent"],
-                _contact_contact_component__WEBPACK_IMPORTED_MODULE_22__["ContactComponent"],
-                _demopage_demopage_component__WEBPACK_IMPORTED_MODULE_23__["DemopageComponent"],
-                _intermediate_intermediate_component__WEBPACK_IMPORTED_MODULE_24__["IntermediateComponent"],
-                _expert_expert_component__WEBPACK_IMPORTED_MODULE_25__["ExpertComponent"],
+                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+                _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"],
+                _common_footer_footer_component__WEBPACK_IMPORTED_MODULE_7__["FooterComponent"],
+                _common_header_header_component__WEBPACK_IMPORTED_MODULE_8__["HeaderComponent"],
+                _courses_courses_component__WEBPACK_IMPORTED_MODULE_9__["CoursesComponent"],
+                _course_desc_course_desc_component__WEBPACK_IMPORTED_MODULE_10__["CourseDescComponent"],
+                _user_exp_user_exp_component__WEBPACK_IMPORTED_MODULE_11__["UserExpComponent"],
+                _learn_learn_component__WEBPACK_IMPORTED_MODULE_12__["LearnComponent"],
+                _you_get_you_get_component__WEBPACK_IMPORTED_MODULE_13__["YouGetComponent"],
+                _faq_faq_component__WEBPACK_IMPORTED_MODULE_14__["FaqComponent"],
+                _cards_cards_component__WEBPACK_IMPORTED_MODULE_15__["CardsComponent"],
+                _header_dropdown_header_dropdown_component__WEBPACK_IMPORTED_MODULE_17__["HeaderDropdownComponent"],
+                _curriculam_curriculam_component__WEBPACK_IMPORTED_MODULE_18__["CurriculamComponent"],
+                _card_group_card_group_component__WEBPACK_IMPORTED_MODULE_19__["CardGroupComponent"],
+                _landing_cards_landing_cards_component__WEBPACK_IMPORTED_MODULE_20__["LandingCardsComponent"],
+                _thankyou_thankyou_component__WEBPACK_IMPORTED_MODULE_21__["ThankyouComponent"],
+                _register_register_component__WEBPACK_IMPORTED_MODULE_22__["RegisterComponent"],
+                _contact_contact_component__WEBPACK_IMPORTED_MODULE_23__["ContactComponent"],
+                _demopage_demopage_component__WEBPACK_IMPORTED_MODULE_24__["DemopageComponent"],
+                _intermediate_intermediate_component__WEBPACK_IMPORTED_MODULE_25__["IntermediateComponent"],
+                _expert_expert_component__WEBPACK_IMPORTED_MODULE_26__["ExpertComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
-                ngx_bootstrap__WEBPACK_IMPORTED_MODULE_15__["ProgressbarModule"].forRoot(),
-                ngx_scrollspy__WEBPACK_IMPORTED_MODULE_27__["ScrollSpyModule"].forRoot(),
-                ngx_scroll_event__WEBPACK_IMPORTED_MODULE_26__["ScrollEventModule"]
+                _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterModule"],
+                ngx_bootstrap__WEBPACK_IMPORTED_MODULE_16__["ProgressbarModule"].forRoot(),
+                ngx_scrollspy__WEBPACK_IMPORTED_MODULE_28__["ScrollSpyModule"].forRoot(),
+                ngx_scroll_event__WEBPACK_IMPORTED_MODULE_27__["ScrollEventModule"]
             ],
-            providers: [ngx_scrollspy__WEBPACK_IMPORTED_MODULE_27__["ScrollSpyService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+            providers: [ngx_scrollspy__WEBPACK_IMPORTED_MODULE_28__["ScrollSpyService"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
